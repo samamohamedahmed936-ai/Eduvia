@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eduvia - Grade 12</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fffde7);
+      color: #2e3c4f;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #3f51b5;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      height: 45px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .hero {
+      text-align: center;
+      background: #e8eaf6;
+      padding: 40px 20px;
+      border-bottom: 4px solid #3f51b5;
+    }
+    .hero h1 {
+      font-size: 34px;
+      color: #3f51b5;
+    }
+    .hero p {
+      font-size: 20px;
+    }
+    .content {
+      padding: 30px 20px;
+    }
+    .content h2 {
+      color: #1a237e;
+      margin-top: 30px;
+    }
+    .content ul {
+      list-style-type: '✔️ ';
+      padding-left: 20px;
+    }
+    .content img {
+      display: block;
+      margin: 20px auto;
+      max-width: 95%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .quiz {
+      background: #f3f4ff;
+      padding: 30px 20px;
+      border-top: 3px solid #3f51b5;
+    }
+    .quiz h2 {
+      color: #1a237e;
+    }
+    .quiz p {
+      margin: 10px 0;
+    }
+    .certificate-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffca28;
+      color: #1a237e;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .certificate-btn:hover {
+      background-color: #ffd54f;
+    }
+    footer {
+      background: #3f51b5;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Eduvia_Logo_Transparent.png" alt="Eduvia Logo" class="logo" />
+    <nav>
+      <a href="index.html">⬅ Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Grade 12 - Full Summary 💡</h1>
+    <p>You made it to the final level! Let’s revise everything you’ve learned!</p>
+  </section>
+
+  <section class="content">
+    <h2>🌐 Networking Summary</h2>
+    <ul>
+      <li>IP Address: Unique address for each device.</li>
+      <li>TCP/IP: Sends data packets safely across networks.</li>
+      <li>DNS: Turns website names into IP addresses.</li>
+      <li>Protocols: HTTP, HTTPS, FTP, etc.</li>
+      <li>Topologies: Star, Bus, Ring.</li>
+      <li>Devices: Router, Modem, Switch, NIC.</li>
+      <li>IPv4 vs IPv6: New version supports more devices.</li>
+    </ul>
+
+    <h2>🖥️ Hardware Summary</h2>
+    <ul>
+      <li>Motherboard, CPU, RAM, Storage.</li>
+      <li>Power Supply, Ports, Network Cards.</li>
+    </ul>
+
+    <h2>🔐 Cybersecurity Basics</h2>
+    <ul>
+      <li>Strong Passwords, Antivirus, Encryption.</li>
+      <li>Phishing awareness, Firewalls, 2FA.</li>
+    </ul>
+
+    <img src="grade12_cybersecurity.jpg" alt="Cybersecurity Overview" />
+  </section>
+
+  <section class="quiz">
+    <h2>🎓 Final Quiz!</h2>
+    <p>1. What is the function of TCP?</p>
+    <p>2. Name two hardware parts responsible for speed.</p>
+    <p>3. Why is encryption important?</p>
+    <p>4. What’s the difference between IPv4 and IPv6?</p>
+    <p>5. Give one example of how to stay safe online.</p>
+  </section>
+
+  <a class="certificate-btn" href="certificate.html">🎉 Get Your Certificate</a>
+
+  <footer>
+    <p>© 2025 Eduvia. You've Completed the Full Journey! 🌟</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Online Safety Quiz | Eduvia</title>
+  <style>
+    body {
+      background: #fff8e1;
+      font-family: 'Comic Sans MS', cursive;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #f57f17;
+    }
+    .question-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 20px;
+      border: none;
+      background: #fbc02d;
+      color: #000;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #f9a825;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛡️ Online Safety Quiz</h1>
+
+  <div class="question-box">
+    <p><strong>Someone online asks where you live. What should you do?</strong></p>
+    <button onclick="answer(false)">Tell them</button>
+    <button onclick="answer(true)">Don't tell them</button>
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <script>
+    function answer(isCorrect) {
+      const feedback = document.getElementById("feedback");
+      feedback.textContent = isCorrect ? "✅ Correct! Keep personal info private." : "❌ Oops! Don’t share your address online!";
+    }
+  </script>
+</body>
+</html>

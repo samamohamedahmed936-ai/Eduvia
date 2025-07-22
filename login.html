@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eduvia - Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 400px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .btn {
+      background-color: #74ebd5;
+      color: #000;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #58d2be;
+    }
+
+    .google-btn {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .google-btn img {
+      width: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <img src="Eduvia_Logo_Transparent.png" alt="Eduvia Logo">
+    <h2>Welcome to Eduvia</h2>
+    <input type="text" placeholder="Username" id="username" />
+    <input type="email" placeholder="Email" id="email" />
+    <input type="password" placeholder="Password" id="password" />
+    <button class="btn" onclick="login()">Login</button>
+    <button class="btn google-btn" onclick="googleLogin()">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+      Sign in with Google
+    </button>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      if (username) {
+        localStorage.setItem("username", username);
+        window.location.href = "grades.html";
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+
+    function googleLogin() {
+      alert("Google login coming soon (Firebase Auth)");
+    }
+  </script>
+
+</body>
+</html>

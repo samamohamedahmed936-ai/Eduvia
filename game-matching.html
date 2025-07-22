@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eduvia Matching Game</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #4a90e2;
+    }
+
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border: 2px solid #4a90e2;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      max-width: 80%;
+      display: none;
+    }
+
+    .matched {
+      background-color: #c8e6c9;
+      pointer-events: none;
+    }
+
+    .hidden-text {
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Match Computer Parts 🧠</h1>
+  <p>Click two cards to find the matching image and word!</p>
+
+  <div class="game-container" id="gameBoard"></div>
+
+  <footer>© 2025 Eduvia</footer>
+
+  <script>
+    const items = [
+      { type: "image", value: "💻", name: "Laptop" },
+      { type: "text", value: "Laptop", name: "Laptop" },
+      { type: "image", value: "🖨️", name: "Printer" },
+      { type: "text", value: "Printer", name: "Printer" },
+      { type: "image", value: "🖱️", name: "Mouse" },
+      { type: "text", value: "Mouse", name: "Mouse" },
+      { type: "image", value: "⌨️", name: "Keyboard" },
+      { type: "text", value: "Keyboard", name: "Keyboard" }
+    ];
+
+    let selected = [];
+    let matchedCount = 0;
+
+    function shuffle(array) {
+      return array.sort(() => 0.5 - Math.random());
+    }
+
+    function createCard(item) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.dataset.name = item.name;
+
+      if (item.type === "image") {
+        card.innerHTML = `<span style="font-size:50px;">${item.value}</span>`;
+      } else {
+        card.textContent = item.value;
+      }
+
+      card.addEventListener('click', () => {
+        if (card.classList.contains("matched") || selected.includes(card)) return;
+        card.style.backgroundColor = "#e1f5fe";
+        selected.push(card);
+
+        if (selected.length === 2) {
+          const [first, second] = selected;
+          if (first.dataset.name === second.dataset.name) {
+            first.classList.add('matched');
+            second.classList.add('matched');
+            matchedCount++;
+          } else {
+            setTimeout(() => {
+              first.style.backgroundColor = "white";
+              second.style.backgroundColor = "white";
+            }, 800);
+          }
+          selected = [];
+
+          if (matchedCount === items.length / 2) {
+            setTimeout(() => {
+              alert("🎉 Great job! You matched all items!");
+            }, 500);
+          }
+        }
+      });
+
+      return card;
+    }
+
+    const board = document.getElementById('gameBoard');
+    shuffle(items).forEach(item => {
+      const card = createCard(item);
+      board.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>

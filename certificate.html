@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Congratulations - Eduvia</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #fffaf0, #fef6e4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .certificate {
+      margin-top: 40px;
+      display: none;
+    }
+
+    .certificate img {
+  width: 60%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Congratulations!</h1>
+  <p>You’ve completed the full Eduvia journey — from Grade 1 to Grade 12!<br>You're now ready to explore the tech world with confidence.</p>
+
+  <button onclick="showCertificate()">🎓 View Your Certificate</button>
+
+  <div class="certificate" id="certificateDiv">
+    <h2>Your Certificate of Completion</h2>
+    <img src="A_certificate_of_completion_from_Eduvia_is_present.png" alt="Eduvia Certificate">
+  </div>
+
+  <script>
+    function showCertificate() {
+      document.getElementById('certificateDiv').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

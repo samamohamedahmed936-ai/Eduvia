@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Internet Safety Game | Eduvia</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #e0f7fa;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #0077b6;
+    }
+    .question {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #03a9f4;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0288d1;
+    }
+    .result {
+      font-weight: bold;
+      color: green;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Internet Safety Game</h1>
+  <div class="question">
+    <p><strong>Should you share your password with a stranger?</strong></p>
+    <button onclick="checkAnswer(false)">Yes</button>
+    <button onclick="checkAnswer(true)">No</button>
+    <p class="result" id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswer(correct) {
+      const result = document.getElementById("result");
+      if (correct) {
+        result.textContent = "✅ Great job! You're staying safe online.";
+      } else {
+        result.textContent = "❌ Oh no! Never share your password.";
+      }
+    }
+  </script>
+</body>
+</html>

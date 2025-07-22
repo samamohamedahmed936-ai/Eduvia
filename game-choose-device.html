@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find the Right Device!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .option {
+      border: 3px solid #ccc;
+      border-radius: 15px;
+      padding: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 160px;
+      background: white;
+    }
+
+    .option:hover {
+      transform: scale(1.05);
+      border-color: #4caf50;
+    }
+
+    .option img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .back-button {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      color: white;
+      background: #2196f3;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background: #0d8bf2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Find the Right Device!</h1>
+  <p class="question">Which one is used to draw and learn?</p>
+
+  <div class="options">
+    <div class="option" onclick="checkAnswer(true)">
+      <img src="computer.png" alt="Computer">
+      <p>Computer</p>
+    </div>
+    <div class="option" onclick="checkAnswer(false)">
+      <img src="Toys.jpg" alt="Toys">
+      <p>Toy</p>
+    </div>
+    <div class="option" onclick="checkAnswer(false)">
+      <img src="remote.png" alt="Remote">
+      <p>Remote</p>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <a href="grade1-lessons.html" class="back-button">⬅ Back to Lessons</a>
+
+  <script>
+    function checkAnswer(isCorrect) {
+      const result = document.getElementById("result");
+      if (isCorrect) {
+        result.innerHTML = "🎉 Correct! A computer helps you learn and draw.";
+        result.className = "correct";
+      } else {
+        result.innerHTML = "❌ Oops! Try again.";
+        result.className = "wrong";
+      }
+    }
+  </script>
+
+</body>
+</html>

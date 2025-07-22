@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 1 Quiz</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #e0f7fa;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00796b;
+    }
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      margin: 0;
+      font-weight: bold;
+    }
+    .question label {
+      display: block;
+      margin-left: 15px;
+      margin-bottom: 5px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      background-color: #00796b;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎓 Grade 1 Quiz</h1>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. What device do we use to draw and learn?</p>
+      <label><input type="radio" name="q1" value="a"> Toy</label>
+      <label><input type="radio" name="q1" value="b"> Computer </label>
+      <label><input type="radio" name="q1" value="c"> Ball</label>
+    </div>
+
+    <div class="question">
+      <p>2. Is a phone a smart device?</p>
+      <label><input type="radio" name="q2" value="a"> Yes </label>
+      <label><input type="radio" name="q2" value="b"> No</label>
+    </div>
+
+    <div class="question">
+      <p>3. Can we touch a keyboard?</p>
+      <label><input type="radio" name="q3" value="a"> Yes </label>
+      <label><input type="radio" name="q3" value="b"> No</label>
+    </div>
+
+    <div class="question">
+      <p>4. Is hardware something we can see?</p>
+      <label><input type="radio" name="q4" value="a"> Yes </label>
+      <label><input type="radio" name="q4" value="b"> No</label>
+    </div>
+
+    <div class="question">
+      <p>5. Which one is NOT a smart device?</p>
+      <label><input type="radio" name="q5" value="a"> TV</label>
+      <label><input type="radio" name="q5" value="b"> Pencil </label>
+      <label><input type="radio" name="q5" value="c"> Phone</label>
+    </div>
+
+    <div class="question">
+      <p>6. What part shows us pictures?</p>
+      <label><input type="radio" name="q6" value="a"> Screen </label>
+      <label><input type="radio" name="q6" value="b"> Mouse</label>
+      <label><input type="radio" name="q6" value="c"> Keyboard</label>
+    </div>
+
+    <div class="question">
+      <p>7. What do we use to type?</p>
+      <label><input type="radio" name="q7" value="a"> Keyboard </label>
+      <label><input type="radio" name="q7" value="b"> Screen</label>
+    </div>
+
+    <div class="question">
+      <p>8. What makes the arrow move on screen?</p>
+      <label><input type="radio" name="q8" value="a"> Mouse </label>
+      <label><input type="radio" name="q8" value="b"> Printer</label>
+    </div>
+
+    <div class="question">
+      <p>9. What device can you use to watch videos?</p>
+      <label><input type="radio" name="q9" value="a"> TV </label>
+      <label><input type="radio" name="q9" value="b"> Chair</label>
+    </div>
+
+    <div class="question">
+      <p>10. Is a tablet a type of computer?</p>
+      <label><input type="radio" name="q10" value="a"> Yes </label>
+      <label><input type="radio" name="q10" value="b"> No</label>
+    </div>
+
+    <div class="question">
+      <p>11. What part prints your work on paper?</p>
+      <label><input type="radio" name="q11" value="a"> Printer </label>
+      <label><input type="radio" name="q11" value="b"> Scanner</label>
+    </div>
+
+    <div class="question">
+      <p>12. What do we use to hear sound?</p>
+      <label><input type="radio" name="q12" value="a"> Speaker </label>
+      <label><input type="radio" name="q12" value="b"> Monitor</label>
+    </div>
+
+    <div class="question">
+      <p>13. What part shows pictures and text?</p>
+      <label><input type="radio" name="q13" value="a"> Monitor </label>
+      <label><input type="radio" name="q13" value="b"> Mouse</label>
+    </div>
+
+    <div class="question">
+      <p>14. Is hardware inside or outside the computer?</p>
+      <label><input type="radio" name="q14" value="a"> Outside </label>
+      <label><input type="radio" name="q14" value="b"> Only inside</label>
+    </div>
+
+    <div class="question">
+      <p>15. Can a computer help you learn?</p>
+      <label><input type="radio" name="q15" value="a"> Yes </label>
+      <label><input type="radio" name="q15" value="b"> No</label>
+    </div>
+
+    <div class="question">
+      <p>16. Which is a part of computer?</p>
+      <label><input type="radio" name="q16" value="a"> Banana</label>
+      <label><input type="radio" name="q16" value="b"> Mouse </label>
+    </div>
+
+    <button type="button" onclick="submitQuiz()">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const correctAnswers = {
+      q1: "b",
+      q2: "a",
+      q3: "a",
+      q4: "a",
+      q5: "b",
+      q6: "a",
+      q7: "a",
+      q8: "a",
+      q9: "a",
+      q10: "a",
+      q11: "a",
+      q12: "a",
+      q13: "a",
+      q14: "a",
+      q15: "a",
+      q16: "b"
+    };
+
+    function submitQuiz() {
+      let score = 0;
+      let total = 16;
+
+      for (let q in correctAnswers) {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer && answer.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      const percentage = (score / total) * 100;
+      const result = document.getElementById("result");
+      if (percentage >= 60) {
+        result.innerHTML = `✅ You scored ${score} out of ${total} (${percentage.toFixed(0)}%).<br>🎉 Congratulations! You passed!<br><a href="grade2.html">Go to Grade 2 ➡</a>`;
+      } else {
+        result.innerHTML = `❌ You scored ${score} out of ${total} (${percentage.toFixed(0)}%).<br>😢 Try again to pass.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
